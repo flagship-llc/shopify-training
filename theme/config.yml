@@ -1,0 +1,6 @@
+development:
+  password: "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"
+  theme_id: "91960049795"
+  store: "hiroma-store.myshopify.com"
+  ignore_files:
+    - config/settings_data.json

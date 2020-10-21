@@ -51,14 +51,12 @@ const tagNewQuery = () => {
     const query = gql `
     {
         shop {
-            products(first: 10) {
+            products(first: 5, query:"tag:new"){
                 edges {
                     node {
-                        id, 
-                        handle,
-                        metafield(namespace: "global", key: "extra") {
-                                value    
-                            }
+                        id
+                        handle
+                        tags
                     }
                 }
             }
@@ -67,8 +65,10 @@ const tagNewQuery = () => {
     `;
 
     const data = await client.request(query);
-    // console.log(data);
-    console.log(data.shop.products.edges);
+    const products = data.shop.products.edges.map(edge => edge.node.tags);
+    console.log(products);
+    
+    // console.log(data.shop.products.edges);
     // console.log(data.shop.products.edges);
 
     // const mutation = gql `

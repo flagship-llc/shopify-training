@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	$.getJSON('/products/lighter-bmw-design.js', (product) => {
+		const div = document.querySelector("#training-title");
+		// div.innerHTML = `${product.title}`;
+	});
+</script>
+
+{% assign lighter = all_products["lighter-bmw-design"] %}
+{{ lighter.title }}
+
+<div id="training-title">
+
+</div>
