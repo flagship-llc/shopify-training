@@ -56,10 +56,7 @@ const tagNewQuery = () => {
                     node {
                         id, 
                         handle,
-                        metafield1:metafield(
-                            namespace: "global"
-                            key: "extra"
-                            ){
+                        metafield(namespace: "global", key: "extra") {
                                 value    
                             }
                     }
